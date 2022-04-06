@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     color: "black",
     fontSize: "20px",
-    marginLeft: theme.spacing(20),
+    marginLeft: theme.spacing(10),
     "&:hover": {
       fontWeight: 600,
       borderBottom: "0.7px solid black",
@@ -37,7 +37,7 @@ function Navbar() {
       
       <Toolbar>
         <Typography variant="h4" className={classes.logo}>
-          FORM Sign 
+          Stinger Sign 
         </Typography>
           <div className={classes.navlinks}>
             <Link to="/" className={classes.link}>
