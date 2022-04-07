@@ -1,10 +1,10 @@
-.home {
+.about {
   color: black;
 }
-.top-section {
+.aboutTop-section {
   margin: 0;
   height: 80vh;
-  background-image: url("Home.jpg"); /* The image used */
+  background-image: url("About.jpg"); /* The image used */
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 500px; /* You must set a specified height */
   background-position: center; /* Center the image */
@@ -12,15 +12,28 @@
   background-size: cover;
 }
 
-.top-section h1 {
-  font-size: 40px;
-  -webkit-text-stroke: 1px black;
+.aboutTop-section h1 {
+  font-size: 55px;
+  -webkit-text-stroke: 2.5px black;
   margin: 0;
   color: white;
   padding-top: 200px;
 }
 
-.intro {
+.aboutTop-section p {
+  font-size: 20px;
+  -webkit-text-stroke: 1px white;
+  margin: 0;
+  color: white;
+}
+
+.aboutIntro {
+  text-align: center;
+  padding: 20px 80px;
+}
+
+
+.aboutTeam {
   text-align: center;
   padding: 20px 80px;
 }
