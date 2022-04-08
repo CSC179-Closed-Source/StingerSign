@@ -52,6 +52,9 @@ function Navbar() {
             <Link to="/SignUp" className={classes.link}>
               SignUp
             </Link>
+            <Link to="/CreateBook" className={classes.link}>
+              CreateBook
+            </Link>
           </div>
       </Toolbar>
     </AppBar>

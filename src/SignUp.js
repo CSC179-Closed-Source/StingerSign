@@ -1,7 +1,7 @@
 import * as React from 'react';
- import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-
- import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import { ApolloProvider, ApolloClient, InMemoryCache, useMutation, gql} from '@apollo/client';
+import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import {
     Avatar,
     Button,
@@ -16,6 +16,11 @@ import {
     Typography,
     Container,
   } from "@material-ui/core";
+
+const client = new ApolloClient({
+  uri: "https://f45hzp3fvb.execute-api.us-west-1.amazonaws.com/graphql/",
+  cache: new InMemoryCache()
+});
 
 function Copyright(props) {
   return (
@@ -42,6 +47,45 @@ export default function SignUp() {
       password: data.get('password'),
     });
   };
+
+const CREATE_LINK_MUTATION = gql`
+  mutation createBook(
+    $Email: String!
+    $FirstName: String!
+    $LastName: String!
+    $MiddleInitial: String!
+    $Password: String!
+  ) {
+    post(Email: $Email, FirstName: $FirstName, LastName: $LastName, MiddleInitial: $MiddleInitial, Password: $Password) {
+      id
+      createdAt
+      Password
+      MiddleInitial
+      LastName
+      FirstName
+      Email
+    }
+  }
+`;
+
+const CreateBook = () => {
+  const [formState, setFormState] = useState({
+    Email: '',
+    FirstName: '',
+    LastName: '',
+    MiddleInitial: '',
+    Password: ''
+  });
+
+const [createBook] = useMutation(CREATE_LINK_MUTATION, {
+    variables: {
+      Email: formState.Email,
+      FirstName: formState.FirstName,
+      LastName: formState.LastName,
+      MiddleInitial: formState.MiddleInitial,
+      Password: formState.Password
+    }
+  });
 
   return (
     <ThemeProvider theme={theme}>
