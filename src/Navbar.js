@@ -52,6 +52,9 @@ function Navbar() {
             <Link to="/SignUp" className={classes.link}>
               SignUp
             </Link>
+            <Link to="/Signature" className={classes.link}>
+              Signature
+            </Link>
           </div>
       </Toolbar>
     </AppBar>
