@@ -10,6 +10,7 @@ import SignUp from "./SignUp";
 import Signature from "./Signature";
 import Contact from "./Contact";
 import Dashboard from "./Dashboard";
+import Pdfviewer from "./Pdfviewer";
 
 function App() {
 	return (
@@ -23,6 +24,7 @@ function App() {
 					<Route path="/Contact" element={<Contact />} />
 					<Route path="/Signature" element={<Signature />} />
 					<Route path="/Dashboard" element={<Dashboard />} />
+					<Route path="/Pdfviewer" element={<Pdfviewer />} />
 				</Routes>
 			</Router>
 		</div>
