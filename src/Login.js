@@ -5,29 +5,33 @@ import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import {
   Avatar,
   Button,
+  TextField,
+  FormControlLabel,
+  Checkbox,
   Grid,
   Box,
   CssBaseline,
   Typography,
   Container,
 } from "@material-ui/core";
-import { useMutation } from "@apollo/client";
-import { ADD_NEW_USER } from "./GraphQL/Mutations";
+import { useQuery } from "@apollo/client";
+import { EMAIL_AND_PASSWORD } from "./GraphQL/Query";
 import { Link } from "react-router-dom";
 
 const theme = createTheme();
 
-export default function SignUp() {
+export default function Login() {
   const initValues = {
-    firstName: "",
-    lastName: "",
     email: "",
     password: "",
   };
   const [formValues, setFormValues] = React.useState(initValues);
-  const [addNewUser, { loading }] = useMutation(ADD_NEW_USER);
-
+  //   const [addNewUser, { loading }] = useMutation(ADD_NEW_USER);
+  const { error, loading, data } = useQuery(EMAIL_AND_PASSWORD);
   if (loading) return <div>{console.log("loading")}</div>;
+  if (error) return { error };
+
+  //   console.log(data.list_UserInfoItems._UserInfoItems);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,14 +40,23 @@ export default function SignUp() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addNewUser({
-      variables: {
-        userEmail: formValues.email,
-        userFirstName: formValues.firstName,
-        userLastName: formValues.lastName,
-        userPassword: formValues.password,
-      },
-    });
+    const checkEmail = data.list_UserInfoItems._UserInfoItems.some(
+      (el) => el.userEmail === formValues.email
+    );
+    const checkPassword = data.list_UserInfoItems._UserInfoItems.some(
+      (pass) => pass.userPassword === formValues.password
+    );
+    if (checkEmail && checkPassword) {
+      console.log("true");
+    } else {
+      console.log("false");
+    }
+    // CheckUser({
+    //   variables: {
+    //     userEmail: formValues.email,
+    //     userPassword: formValues.password,
+    //   },
+    // });
   };
 
   return (
@@ -62,7 +75,7 @@ export default function SignUp() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up
+            Login
           </Typography>
           <Box
             component="form"
@@ -72,26 +85,6 @@ export default function SignUp() {
           >
             {/* <form onSubmit={handleSubmit}> */}
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <label>&nbsp; First Name </label>
-                <input
-                  type="text"
-                  name="firstName"
-                  placeholder="First Name"
-                  onChange={handleChange}
-                  value={formValues.firstName}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <label>&nbsp; Last Name </label>
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  name="lastName"
-                  onChange={handleChange}
-                  value={formValues.lastName}
-                />
-              </Grid>
               <Grid item xs={12} sm={6}>
                 <label>&nbsp; Email Address </label>
                 <input
@@ -120,9 +113,21 @@ export default function SignUp() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign Up
+              Login
             </Button>
-            <Link to="/Login">Already have an account? Login</Link>
+
+            {/* {data
+          ? data.list_UserInfoItems._UserInfoItems.map((user) => {
+			  return(
+              <>
+                <div>First name: {user.userFirstName}</div>
+                <div>Last name: {user.userLastName}</div>
+				<hr/>
+              </>
+			  );
+            })
+          : null} */}
+            <Link to="/SignUp">Create Account</Link>
           </Box>
         </Box>
         <br />

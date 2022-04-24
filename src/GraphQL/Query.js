@@ -10,3 +10,14 @@ export const FIRST_AND_LAST_NAMES = gql`
     }
   }
 `;
+
+export const EMAIL_AND_PASSWORD = gql`
+  query blocksQuery {
+    list_UserInfoItems {
+      _UserInfoItems {
+        userEmail
+        userPassword
+      }
+    }
+  }
+`;

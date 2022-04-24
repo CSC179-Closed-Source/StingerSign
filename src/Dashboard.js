@@ -1,11 +1,13 @@
 /** @format */
 import { useQuery } from "@apollo/client";
 import { FIRST_AND_LAST_NAMES } from "./GraphQL/Query";
+import { EMAIL_AND_PASSWORD } from "./GraphQL/Query";
 import classes from "./Dashboard.module.css";
 import { Link } from "react-router-dom";
 
 const Dashboard = () => {
-  // const { error, loading, data } = useQuery(FIRST_AND_LAST_NAMES);
+  //const { error, loading, data } = useQuery(FIRST_AND_LAST_NAMES);
+  // const { error, loading, data } = useQuery(EMAIL_AND_PASSWORD);
 
   // if (loading) return <div>Loading...</div>;
 
@@ -17,7 +19,7 @@ const Dashboard = () => {
     <main className={classes.main}>
       <div className={classes.mainText}>
         <h1>Welcome to your Dashboard John!</h1>
-        <Link to="/Signature">
+        <Link to="">
           <h2>Signatures required:</h2>
         </Link>
         <Link to="">
