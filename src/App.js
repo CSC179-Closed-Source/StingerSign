@@ -8,7 +8,7 @@ import Navbar from "./Navbar";
 import SignUp from "./SignUp";
 
 import Dashboard from "./Dashboard";
-import Pdfviewer from "./Pdfviewer";
+import Pdfviewer from "./pdfviewer";
 import Login from "./Login";
 
 function App() {

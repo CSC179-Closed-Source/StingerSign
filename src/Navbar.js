@@ -47,9 +47,6 @@ function Navbar() {
           <Link to="/" className={classes.link}>
             Dashboard
           </Link>
-          <Link to="/pdfviewer" className={classes.link}>
-            PDF Viewer
-          </Link>
         </div>
       </Toolbar>
     </AppBar>
