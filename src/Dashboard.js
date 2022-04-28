@@ -25,11 +25,11 @@ const Dashboard = () => {
         <Link to="">
           <h2>Document History</h2>
         </Link>
-        <Link to="">
-          <h2>Upload Docs</h2>
-        </Link>
         <Link to="/pdfviewer">
           <h2>PDF Viewer</h2>
+        </Link>
+        <Link to="/Login">
+          <h2>Sign Out</h2>
         </Link>
         {/* {data
           ? data.list_UserInfoItems._UserInfoItems.map((user) => {
