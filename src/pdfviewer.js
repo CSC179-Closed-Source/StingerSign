@@ -9,7 +9,7 @@ const Pdfviewer = () => {
     WebViewer(
       {
         path: "lib",
-        initialDoc: "",
+        initialDoc: "https://pdftron.s3.amazonaws.com/downloads/pl/presentation.pptx",
       },
       viewer.current
     ).then((instance) => {
