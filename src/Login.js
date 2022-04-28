@@ -16,11 +16,12 @@ import {
 } from "@material-ui/core";
 import { useQuery } from "@apollo/client";
 import { EMAIL_AND_PASSWORD } from "./GraphQL/Query";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const theme = createTheme();
 
 export default function Login() {
+  const navigate = useNavigate();
   const initValues = {
     email: "",
     password: "",
@@ -48,8 +49,10 @@ export default function Login() {
     );
     if (checkEmail && checkPassword) {
       console.log("true");
+      navigate("/");
     } else {
       console.log("false");
+      alert("User does not exist");
     }
     // CheckUser({
     //   variables: {

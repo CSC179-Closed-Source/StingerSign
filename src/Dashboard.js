@@ -25,9 +25,6 @@ const Dashboard = () => {
         <Link to="">
           <h2>Document History</h2>
         </Link>
-        <Link to="">
-          <h2>Upload Docs</h2>
-        </Link>
         <Link to="/pdfviewer">
           <h2>PDF Viewer</h2>
         </Link>
