@@ -31,6 +31,9 @@ const Dashboard = () => {
         <Link to="/pdfviewer">
           <h2>PDF Viewer</h2>
         </Link>
+        <Link to="/UserProfile">
+          <h2>User Profile Settings</h2>
+        </Link>
         {/* {data
           ? data.list_UserInfoItems._UserInfoItems.map((user) => {
 			  return(

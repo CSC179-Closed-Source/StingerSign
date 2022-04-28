@@ -10,6 +10,7 @@ import SignUp from "./SignUp";
 import Dashboard from "./Dashboard";
 import Pdfviewer from "./pdfviewer";
 import Login from "./Login";
+import UserProfile from "./UserProfile";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="/UserProfile" element={<UserProfile />}/>
 
           <Route path="/Pdfviewer" element={<Pdfviewer />} />
         </Routes>

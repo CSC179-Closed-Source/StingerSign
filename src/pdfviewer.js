@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import WebViewer from "@pdftron/webviewer";
-import "./Pdfviewer.css";
+import "./pdfviewer.css";
 
 const Pdfviewer = () => {
   const viewer = useRef(null);
