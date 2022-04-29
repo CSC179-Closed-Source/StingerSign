@@ -9,11 +9,13 @@ const Pdfviewer = () => {
     WebViewer(
       {
         path: "lib",
-        initialDoc: "https://pdftron.s3.amazonaws.com/downloads/pl/presentation.pptx",
+        initialDoc: "",
       },
       viewer.current
     ).then((instance) => {
       const { documentViewer } = instance.Core;
+      const { Feature } = instance.UI;
+    instance.UI.enableFeatures([Feature.FilePicker]);
       // you can now call WebViewer APIs here...
     });
   }, []);
