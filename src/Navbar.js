@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import {
   AppBar,
@@ -13,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(10),
     display: "flex",
   },
- logo: {
+  logo: {
     flexGrow: "1",
     cursor: "pointer",
   },
@@ -33,29 +35,19 @@ function Navbar() {
   const classes = useStyles();
 
   return (
-    <AppBar position="static" color="inherit" >
-      
+    <AppBar position="static" color="inherit">
       <Toolbar>
         <Typography variant="h4" className={classes.logo}>
-          Stinger Sign 
+          Stinger Sign
         </Typography>
-          <div className={classes.navlinks}>
-            <Link to="/" className={classes.link}>
-              Home
-            </Link>
-            <Link to="/About" className={classes.link}>
-              About
-            </Link>
-            <Link to="/Contact" className={classes.link}>
-              Contact
-            </Link>
-            <Link to="/SignUp" className={classes.link}>
-              SignUp
-            </Link>
-            <Link to="/CreateBook" className={classes.link}>
-              CreateBook
-            </Link>
-          </div>
+        <div className={classes.navlinks}>
+          <Link to="/SignUp" className={classes.link}>
+            SignUp
+          </Link>
+          <Link to="/" className={classes.link}>
+            Dashboard
+          </Link>
+        </div>
       </Toolbar>
     </AppBar>
   );

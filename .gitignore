@@ -25,3 +25,4 @@ yarn-error.log*
 /.vs/StingerSign/v17/.suo
 /.vs/VSWorkspaceState.json
 /yarn.lock
+/.vs/slnx.sqlite-journal

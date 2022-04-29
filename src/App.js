@@ -1,11 +1,16 @@
-import './App.css';
+/** @format */
+
+import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import About from "./About";
-import Navbar from './Navbar';
-import SignUp from './SignUp';
-import CreateBook from './CreateBook';
+
+import Navbar from "./Navbar";
+import SignUp from "./SignUp";
+
+import Dashboard from "./Dashboard";
+import Pdfviewer from "./pdfviewer";
+import Login from "./Login";
+import UserProfile from "./UserProfile";
 
 function App() {
   return (
@@ -13,12 +18,14 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route  path="/" element={<Home />} />
-          <Route  path="/About" element={<About />} />
-          <Route  path="/SignUp" element={<SignUp />} />
-          <Route  path="/CreateBook" element={<CreateBook />} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/UserProfile" element={<UserProfile />}/>
+
+          <Route path="/Pdfviewer" element={<Pdfviewer />} />
         </Routes>
-    </Router>
+      </Router>
     </div>
   );
 }
