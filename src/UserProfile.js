@@ -1,115 +1,69 @@
 import * as React from 'react';
-import {Box, Container, Avatar, Button, Grid, CssBaseline, Typography} from "@material-ui/core";
-import Stack from '@mui/material/Stack';
-import Navbar from './Navbar';
-import { createTheme, ThemeProvider } from "@material-ui/core/styles";
-import { useMutation } from "@apollo/client";
-import { ADD_NEW_USER } from "./GraphQL/Mutations";
-import { Link } from "react-router-dom";
-import PersonOutlineRoundedIcon from '@mui/icons-material/PersonOutlineRounded';
+import { Container, Box, TextField, Avatar, Button } from '@mui/material';
 
-const theme = createTheme();
+// userCompany
+//       userEmail
+//       userFirstName
+//       userJobTitle
+//       userLastName
+//       userPassword
+//       userProfilePicture
 
 export default function UserProfile() {
-    const initValues = {
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-      };
-    const [formValues, setFormValues] = React.useState(initValues);
-    const [addNewUser, { loading }] = useMutation(ADD_NEW_USER);
+  const [firstName, setFirstName] = React.useState("");
+  const [lastName, setLastName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [jobTitle, setJobTitle] = React.useState("");
+  const [password, setPassword] = React.useState("");
 
-    if (loading) return <div>{console.log("loading")}</div>;
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormValues({ ...formValues, [name]: value });
-      };
-    
-      const handleSubmit = (event) => {
-        event.preventDefault();
-        addNewUser({
-          variables: {
-            userEmail: formValues.email,
-            userFirstName: formValues.firstName,
-            userLastName: formValues.lastName,
-            userPassword: formValues.password,
-          },
-        });
-      }; 
-    return (
-        <ThemeProvider theme={theme}>
-          <Container component="main" maxWidth="xs">
-            <CssBaseline />
-            <Box
-              sx={{
-                marginTop: 8,
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-                <PersonOutlineRoundedIcon />
-              </Avatar>
-              <Typography component="h1" variant="h5">
-                User Profile
-              </Typography>
-              <Box
-                component="form"
-                noValidate
-                onSubmit={handleSubmit}
-                sx={{ mt: 3 }}
-              >
-                {/* <form onSubmit={handleSubmit}> */}
-                <Grid container spacing={2}>
-                  <Grid item xs={12} sm={6}>
-                    <label>&nbsp; First Name </label>
-                    <input
-                      type="text"
-                      name="firstName"
-                      placeholder="First Name"
-                      onChange={handleChange}
-                      value={formValues.firstName}
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <label>&nbsp; Last Name </label>
-                    <input
-                      type="text"
-                      placeholder="Last Name"
-                      name="lastName"
-                      onChange={handleChange}
-                      value={formValues.lastName}
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <label>&nbsp; Email Address </label>
-                    <input
-                      type="email"
-                      placeholder="Email Address"
-                      name="email"
-                      onChange={handleChange}
-                      value={formValues.email}
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <label>&nbsp; Password </label>
-                    <input
-                      type="password"
-                      placeholder="Password"
-                      name="password"
-                      onChange={handleChange}
-                      value={formValues.password}
-                    />
-                  </Grid>
-                </Grid>
-                <br />
-                </Box>
-        </Box>
-        <br />
-      </Container>
-    </ThemeProvider>
-                    );
-};
+  const handleClick=(e)=>{
+  }
 
+ return(
+ <Container>
+   <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
+    &nbsp;
+    &nbsp;
+    <Container>
+    <Avatar></Avatar>
+    </Container>
+    &nbsp;
+    &nbsp;
+    <TextField id="outlined-basic" label="First Name" variant="outlined" fullWidth 
+    value={firstName}
+    onChange={(e)=>setFirstName(e.target.value)}
+    />
+    &nbsp;
+    <TextField id="outlined-basic" label="Last Name" variant="outlined" fullWidth 
+    value={lastName}
+    onChange={(e)=>setLastName(e.target.value)}
+    />
+    &nbsp;
+    <TextField id="outlined-basic" label="Email" variant="outlined" fullWidth 
+    value={email}
+    onChange={(e)=>setEmail(e.target.value)}
+    />
+    &nbsp;
+    <TextField id="outlined-basic" label="Password" variant="outlined" fullWidth 
+    value={password}
+    onChange={(e)=>setPassword(e.target.value)}
+    />
+    &nbsp;
+    <TextField id="outlined-basic" label="Job Title" variant="outlined" fullWidth 
+    value={jobTitle}
+    onChange={(e)=>setJobTitle(e.target.value)}
+    />
+   </Box>
+    &nbsp;
+    &nbsp;
+   <div>
+    &nbsp;
+    &nbsp;
+    <Button variant="contained" color="secondary" onClick={handleClick}> Update </Button>
+    &nbsp;
+    &nbsp;
+    </div>
+ </Container>
+)};
+
+ 
