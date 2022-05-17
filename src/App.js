@@ -7,7 +7,6 @@ import NavigationBar from "./components/NavigationBar";
 import Homepage from "./components/Homepage";
 import AboutUs from "./components/AboutUs";
 import UserProfile from "./components/UserProfile";
-import Pdfviewer from "./components/pdfviewer";
 import AuthApi from "./AuthApi";
 import Cookies from "js-cookie";
 import "./App.css";
@@ -73,11 +72,6 @@ const Routes = () => {
 				path="/navigationbar/aboutus"
 				auth={Auth.auth}
 				component={AboutUs}
-			/>
-			<ProtectedRoute
-				path="/navigationbar/pdf"
-				auth={Auth.auth}
-				component={Pdfviewer}
 			/>
 		</div>
 	);
