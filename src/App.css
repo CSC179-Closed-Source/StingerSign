@@ -1,0 +1,297 @@
+/** @format */
+
+* {
+	margin: 0;
+}
+
+.App {
+	text-align: center;
+	color: rgb(0, 0, 0);
+	height: 825px;
+}
+
+.login-header {
+	font-size: 62px;
+	color: rgb(232, 215, 91);
+	font-family: Luminari, fantasy;
+	margin-bottom: 100px;
+}
+
+.login-page {
+	background-color: #e9f2f1;
+	height: 825px;
+}
+
+.login-allinputs {
+	background-color: rgb(199, 200, 155);
+}
+
+.login-inputheader {
+	font-size: 32px;
+	font-family: FreeMono, monospace;
+	margin-bottom: 35px;
+}
+
+.login-email {
+	margin-bottom: 10px;
+}
+
+.login-password {
+	margin-bottom: 15px;
+}
+
+.login-noaccount {
+	margin-top: 10px;
+}
+
+.login-email-input {
+	margin-left: 22px;
+}
+
+.login-workingbutton {
+	margin-bottom: 10px;
+}
+
+.login-notworkingbutton {
+	margin-bottom: 10px;
+}
+
+.login-errormessage {
+	color: red;
+	margin-top: 10px;
+}
+
+.signup-header {
+	font-size: 62px;
+	color: rgb(232, 215, 91);
+	font-family: Luminari, fantasy;
+	margin-bottom: 70px;
+}
+
+.signup-inputheader {
+	font-size: 32px;
+	font-family: FreeMono, monospace;
+	margin-bottom: 35px;
+}
+
+.signup-allfields {
+	background-color: rgb(199, 200, 155);
+}
+
+.signup-page {
+	background-color: #e9f2f1;
+	height: 824px;
+}
+
+.signup-createbutton {
+	margin-bottom: 10px;
+}
+
+.signup-disabledcreatebutton {
+	margin-bottom: 10px;
+}
+
+.signup-error {
+	margin-bottom: 10px;
+}
+
+.errormessage {
+	color: red;
+}
+
+.navbar {
+	height: 50px;
+	background: rgb(101, 156, 98);
+	color: white;
+	padding: 7px;
+}
+
+.navbar-aboutus {
+	text-decoration: none;
+	color: black;
+	font-size: 20px;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+	position: absolute;
+	top: 0px;
+	right: 200px;
+}
+
+.header-navbar {
+	font-size: 42px;
+	color: rgb(232, 215, 91);
+	font-family: Luminari, fantasy;
+}
+
+.header-navbar:hover {
+	cursor: pointer;
+}
+
+.link {
+	text-decoration: none;
+}
+
+.dropbtn {
+	color: black;
+	background-color: rgb(101, 156, 98);
+	padding: 16px;
+	font-size: 20px;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+	border: none;
+	cursor: pointer;
+}
+
+.dropbtn:hover {
+	background-color: rgb(151, 177, 149);
+}
+
+.dropdown {
+	position: absolute;
+	top: 0px;
+	right: 23px;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	top: 65px;
+	right: -17px;
+	background-color: rgb(226, 237, 226);
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: rgb(232, 215, 91);
+}
+
+.show {
+	display: block;
+}
+
+.delete-link {
+	color: red;
+}
+.dashboard {
+	background-color: rgb(238, 228, 153);
+	height: 768px;
+}
+
+.dashboard-links {
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: 200px;
+}
+
+.profile-background {
+	background-color: rgb(238, 228, 153);
+	height: 768px;
+}
+
+.profile-info {
+	position: absolute;
+	top: 100px;
+}
+
+.tablecss {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 60px;
+	margin-top: 20px;
+}
+
+table {
+	width: 1440px;
+	height: 200px;
+	margin-bottom: 100px;
+}
+
+th {
+	border-bottom: 4px solid rgb(0, 0, 0);
+	border-left: 4px solid rgb(0, 0, 0);
+	border-right: 4px solid rgb(0, 0, 0);
+	background-color: rgb(238, 228, 153);
+}
+
+td {
+	text-align: center;
+	font-size: 22px;
+	background-color: rgb(227, 224, 205);
+	border-bottom: 4px solid rgb(0, 0, 0);
+	border-left: 4px solid rgb(0, 0, 0);
+	border-right: 4px solid rgb(0, 0, 0);
+}
+
+.tableheader {
+	font-size: 53px;
+	color: rgb(0, 0, 0);
+	font-family: Marker Felt, fantasy;
+}
+
+.tablehead {
+	font-size: 26px;
+	color: black;
+	background-color: rgb(236, 225, 225);
+}
+
+.aboutTop-section {
+	margin: 0;
+	height: 80vh;
+	background-image: url("./components/About.jpg"); /* The image used */
+	height: 762px; /* You must set a specified height */
+	background-position: center; /* Center the image */
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: cover;
+}
+.about-title {
+	background-color: black;
+	-webkit-text-stroke: 1.5px rgb(199, 200, 155);
+	font-size: 55px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 150px;
+}
+
+.about-title {
+	background-color: black;
+	-webkit-text-stroke: 1.5px rgb(199, 200, 155);
+	font-size: 55px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 150px;
+}
+
+.aboutIntro {
+	background-color: black;
+	color: rgb(199, 200, 155);
+	font-size: 20px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 270px;
+	text-align: center;
+}
+
+.aboutTeam {
+	background-color: black;
+	color: rgb(199, 200, 155);
+	font-size: 15px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 450px;
+	text-align: center;
+}

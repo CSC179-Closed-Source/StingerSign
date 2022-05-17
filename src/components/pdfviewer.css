@@ -1,0 +1,11 @@
+/** @format */
+
+.Pdfviewer {
+	height: 100vh;
+}
+
+.webviewer {
+	margin-left: 20%;
+	height: 100vh;
+	width: 100vw;
+}
